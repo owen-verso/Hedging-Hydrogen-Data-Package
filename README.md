@@ -1,42 +1,40 @@
-# Long-term-investment-and-energy-procurement-risk-management
+# Hedging Hydrogen Data Package
 
-Scenario data supporting the paper: Long-term investment and energy procurement risk management planning under uncertainty for an electrolytic green hydrogen producer, 2024.
+Scenario data supporting the paper: Hedging Hydrogen: Planning and Contracting Under Uncertainty for a Green Hydrogen Producer, 2025.
 
-Submitted to Energy Economics.
+Submitted to Elsevier.
 
-Authors: Owen Palmer (a,b), Hugo Radet (b), Simon Camal (a), Robin Girard (a)
+Authors: Owen Palmer (a,b), Hugo Radet (b), Simon Camal (a), Jalal Kazempour (c), Robin Girard (a)
 
-(a) Mines Paris - Centre PERSEE; 
+(a) PSL University, Mines Paris - Centre PERSEE; 
 (b) Verso Energy
+(c) Technical University of Denmark (DTU)
 
 ## Data Files Descriptions 
-da = day ahead market price (€/MWh) [1]<br />
-dem = hydrogen demand (MW)<br />
-ppa = hourly availability factor / production factor (/max capacity) [2]
+da = day ahead market price (€/MWh) <br />
+dem = hydrogen demand (MWh)<br />
+ppa = hourly availability factor / production factor (/max capacity)
 
 ## In-Sample Set Descriptions 
-In-Sample Set 1 = x1 day-ahead scenario for 2018 re-centred at 70€/MWh yearly average. Standard demand scenario. <br />
-Solutions: *D_AS(NA)* and *D_PE*.
+Expected Value Problem, Fixed Demand = x1 scenario with average day ahead price (70€/MWh yearly average) and capacity factors. Standard demand scenario. <br />
+Used for Solutions: *D_EVP(NA)*, *D_PE*, *D_PE(GS)*.
 
-In-Sample Set 2 = x10 even year day-ahead scenarios. Standard demand scenario only.<br />
-Solutions: *S_*$\beta$*0(NA)(da,p)*, *S_*$\beta$*0.9(da,p)*, *S_*$\beta$*0.9(NA)(da,p)*, and Context's A, B and C in the prospective study.
+Expected Value Problem, Uncertain Demand = x10 even year day-ahead scenarios. Standard demand scenario only.<br />
+Used for Solutions: *D_PE(dem)*, *D_PE(GS,dem)*.
 
-In-Sample Set 3 = x15 even year day-ahead scenarios. Standard demand scenario and seasonal demand scenario.<br />
-Solutions: *S_*$\beta$*0.9(da,p,dem)*
+Fixed Demand = x25 randomised scenarios, although with a fixed demand profile.<br />
+Solutions: *S_*$\beta$*0(NA)*, *S_*$\beta$*0.9*, *S_*$\beta$*0.9(GS)*, *S_*$\beta$*0.9(NA)*.
 
-In-Sample Set 4 = x1 day-ahead scenario for 2018 re-centred at 70€/MWh yearly average. Standard demand scenario averaged by hour with seasonal demand scenario.<br />
-Solutions: *D_PE(A.dem)*
+Uncertain Demand =  x25 randomised scenarios with randomised seasonal demand changes.<br />
+Solutions: *S_*$\beta$*0.9(dem)*, *S_*$\beta$*0.9(GS,dem)*.
 
 ## Out-of-Sample Set Descriptions
-Out-of-Sample Set 1 = x20 odd-year scenarios. Standard demand scenario
+NOTE - out of sample sets are split into two files of 508, 492 scenarios for each set to reduce computational burden of initial loading.
 
-Out-of Sample Set 2 = x20 odd-year scenarios. Seasonal demand scenario.
+Fixed Demand = x1000 x25 randomised scenarios with a fixed demand profile.<br />
 
-## Test Set Descriptions
-Test Set 1 = Out-of-Sample Set 1 only<br />
-Test Set 2 = Out-of-Sample Sets 1 & 2 Combined
+Uncertain Demand = x1000 randomised scenarios with randomised seasonal demand changes.<br />
 
-## References 
+## Original Data Sources 
 [1] ENTSOe, ENTSOe Transparency Platform https://transparency.entsoe.eu/ 
-
 [2] Renewables Ninja, https://www.renewables.ninja/ 
