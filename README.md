@@ -37,4 +37,5 @@ Uncertain Demand = x1000 randomised scenarios with randomised seasonal demand ch
 
 ## Original Data Sources 
 [1] ENTSOe, ENTSOe Transparency Platform https://transparency.entsoe.eu/ 
+
 [2] Renewables Ninja, https://www.renewables.ninja/ 
